@@ -1,0 +1,27 @@
+{
+  "colors": [
+    "primary",
+    "secondary",
+    "accent",
+    "background",
+    "background-contrast",
+    "surface",
+    "surface-contrast",
+    "border",
+    "text",
+    "text-secondary",
+    "text-disabled",
+    "success",
+    "info",
+    "warning",
+    "danger"
+  ],
+  "fonts": {
+    "font_family": {
+      "primary": "Inter:wght@400;500;600;700",
+      "primary_type": "sans-serif",
+      "secondary": "Merriweather:wght@700;900",
+      "secondary_type": "sans-serif"
+    }
+  }
+}

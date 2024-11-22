@@ -1,0 +1,25 @@
+---
+import Logo from "@/components/Logo.astro";
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { getEntry } from "astro:content";
+
+const { logo } = config.site;
+const entry = await getEntry("pages", "404");
+const { Content } = await entry.render();
+---
+
+<Base title={entry.data.title}>
+  <section class="section">
+    <div class="container">
+      <div class="flex h-[40vh] items-center justify-center">
+        <div class="flex flex-col items-center">
+          <Logo showText={false} />
+          <h1 class="mb-4" set:html={markdownify(entry.data.title)} />
+          <Content />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

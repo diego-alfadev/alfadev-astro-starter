@@ -1,0 +1,31 @@
+@use "./utilities" as utils;
+
+
+
+.btn {
+  @apply inline-block h-[52px] border px-8 py-2 text-sm font-medium leading-[36px] transition-all duration-200;
+}
+
+.btn-primary {
+  @extend .bg-gradient-primary;
+  @apply cursor-pointer rounded-[50px] border-0 text-center font-medium text-white hover:shadow-[0px_5px_30px] hover:shadow-primary;
+}
+
+.btn-outline-primary {
+  @apply relative rounded-[50px] border-primary text-center capitalize text-text hover:text-white hover:shadow-[0px_5px_30px] hover:shadow-primary hover:before:opacity-100;
+  &:hover {
+    @extend .bg-gradient-primary;
+  }
+}
+
+.btn-outline-white {
+  @apply rounded-[50px] bg-transparent text-center capitalize text-text;
+}
+
+.btn-white {
+  @apply min-w-[150px] rounded-[50px] border-white bg-white text-center capitalize text-gray-900 shadow-lg hover:shadow dark:shadow-[#ffffff61]
+}
+
+.btn-sm {
+  @apply h-[42px] leading-[24px];
+}

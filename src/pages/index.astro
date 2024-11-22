@@ -1,0 +1,37 @@
+---
+import Base from "@/layouts/Base.astro";
+import Section from "@/components/Section.astro";
+import Features from "@/components/Features.astro";
+import Testimonial from "@/components/Testimonial.astro";
+import Cta from "@/layouts/partials/Cta.astro";
+import { getEntry } from "astro:content";
+
+const homepage = await getEntry("homepage", "index");
+// console.log(homepage);
+const { banner, sections, features, testimonial } = homepage.data;
+const call_to_action = homepage.data.call_to_action;
+---
+
+<Base>
+  <!-- banner -->
+  <section class="md:my-20 animate-fade-in">
+    <Section banner={banner} />
+  </section>
+  <!-- multi section -->
+  {
+    sections && (
+      <section class="multi-section">
+        {sections.map((section, index) => (
+          <Section key={index} banner={section} />
+        ))}
+      </section>
+    )
+  }
+  <!-- key features -->
+  <Features features={features} />
+  <!-- testimonial -->
+  <Testimonial testimonial={testimonial} />
+  <!-- call to action -->
+  <Cta {...call_to_action} />
+  <!-- <Content /> -->
+</Base>

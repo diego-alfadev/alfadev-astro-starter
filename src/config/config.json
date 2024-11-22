@@ -1,0 +1,40 @@
+{
+  "site": {
+    "title": "alfadev-astro-starter",
+    "base_url": "https://alfadev-astro-starter",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.ico",
+    "logo": "/images/logo.png",
+    "logo_width": "47",
+    "logo_height": "47",
+    "logo_text": "alfadev-astro-starter"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100,
+    "blog_folder": "blog"
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "themefisher-template",
+    "settings": {}
+  },
+
+  "params": {
+    "footer_description": "Building cool things, one line of code (and a lot of coffee) at a time. Got questions? Or just bored? Reach out!",
+    "email": "diego.alfadev@gmail.com",
+    "location": "Somewhere on Earth, where the Wi-Fi is decent and the coffee is strong.",
+    "phone": "+704-555-0127 (but let's be honest, email is faster)",
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2023 proudly crafted with bugs and fixes by [AlfaDev](https://github.com/alfadev)"
+},
+
+  "metadata": {
+    "meta_author": "alfadev",
+    "meta_image": "/images/logo.png",
+    "meta_description": "alfadev-astro-starter is a starter template for Astro, the modern static site generator for the modern web."
+  }
+}

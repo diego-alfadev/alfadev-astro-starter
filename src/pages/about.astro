@@ -1,0 +1,28 @@
+---
+import PageHeader from "@/components/PageHeader.astro";
+import Base from "@/layouts/Base.astro";
+import { getEntry } from "astro:content";
+
+const about = await getEntry("about", "index");
+const page_data = {
+  ...about.data,
+  content: about.body,
+};
+const { Content } = await about.render();
+---
+
+<Base
+  title={about.data.title}
+  meta_title={about.data.meta_title}
+  description={about.data.description}
+  image={about.data.image}
+>
+  <section class="page-hero py-16">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-[768px] text-center">
+        <PageHeader page_data={page_data} />
+      </div>
+      <Content />
+    </div>
+  </section>
+</Base>

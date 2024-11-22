@@ -1,0 +1,6 @@
+{
+    "somesass.css.customData": [
+        ".vscode/tailwind.json"
+    ],
+    "scss.lint.unknownAtRules": "ignore"
+}

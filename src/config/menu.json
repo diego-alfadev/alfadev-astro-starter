@@ -1,0 +1,63 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Features",
+      "url": "/features"
+    },
+    {
+      "name": "Theme",
+      "url": "/theme"
+    },
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Pages",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Does not exist",
+          "url": "/does-not-exist"
+        },
+
+        {
+          "name": "Neither does this",
+          "url": "/neither-does-this"
+        },
+        {
+          "name": "Nope, not this one either",
+          "url": "/nope-not-this-one-either"
+        },
+        {
+          "name": "What about this?",
+          "url": "/what-about-this"
+        },
+        {
+          "name": "Come on, this one must exist",
+          "url": "/come-on-this-one-must-exist"
+        },
+        {
+          "name": "Do you expect this to exist?",
+          "url": "/do-you-expect-this-to-exist"
+        }
+      ]
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Changelog",
+      "url": "/changelog"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+---
+import FeatherIcon from "./react/FeatherIcon";
+
+const { counter } = Astro.props;
+---
+
+<div class="counter mt-16">
+  <div
+    class="flex justify-center row mx-0 rounded-[20px] bg-surface px-10 shadow-lg lg:py-8"
+  >
+    {
+      counter.map((item: any) => (
+        <div class="border-border sm:col-6 lg:col-3 px-10 py-10 text-center lg:border-r lg:py-0 last:lg:border-none">
+          <h3 class="flex items-center justify-center gap-1">
+            <span class="count" aria-valuenow={item.number}>
+              0
+            </span>
+            <span
+              class={"text-primary inline-flex items-center justify-center ml-2"}
+            >
+              <FeatherIcon name={item.icon ?? 'plus'} color={item.color} size={20} client:load />
+            </span>
+          </h3>
+          <p>{item.name}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script is:inline>
+  // astro:page-load event is fired when the page is loaded
+  document.addEventListener("astro:page-load", () => {
+    const counters = document.querySelectorAll(".count");
+    const speed = 500;
+    counters.forEach((counter) => {
+      const animate = () => {
+        const value = +counter.getAttribute("aria-valuenow");
+        const data = +counter.innerText;
+
+        const time = value / speed;
+        if (data < value) {
+          counter.innerText = Math.ceil(data + time);
+          setTimeout(animate, 1);
+        } else {
+          counter.innerText = value;
+        }
+      };
+
+      animate();
+    });
+  });
+</script>

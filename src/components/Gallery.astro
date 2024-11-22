@@ -1,0 +1,59 @@
+---
+
+import { markdownify } from "@/lib/utils/textConverter";
+/**
+ *
+ * This is a gallery component that displays images in a grid layout.
+ * Don't worry about the image size, the component will automatically adjust the grid layout using the Shuffle.js library.
+ *
+ */
+interface Props {
+  gallery: {
+    title: string;
+    images: string[];
+  };
+  cols?: number
+}
+const { gallery, cols = 2 }: Props = Astro.props;
+const grid_cols = `col-${12 / cols}`;
+const { title, images } = gallery;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-center text-center">
+      <div class="col-8">
+        <h2 set:html={markdownify(title)} />
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="row" id="photo-gallery">
+        {
+          images.map((image: any) => (
+            <div class={`picture-item ${grid_cols} mt-12`}>
+              {" "}
+              <img class="w-full" src={image} alt="" />
+            </div>
+          ))
+        }
+
+        <div class="js-shuffle-sizer col-1"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Shuffle from "shufflejs";
+  const element = document.getElementById("photo-gallery");
+  if (!element) throw new Error("photo-gallery element not found");
+  const sizer = element.querySelector<HTMLElement>(".js-shuffle-sizer");
+  if (!sizer) throw new Error("js-shuffle-sizer element not found");
+  // Assumes you're using the UMD version of Shuffle (for example, from unpkg.com).
+  const shuffleInstance = new Shuffle(element, {
+    itemSelector: ".picture-item",
+    sizer: sizer,
+    columnWidth: 1,
+  });
+</script>

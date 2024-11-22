@@ -1,0 +1,39 @@
+---
+import Base from "@/layouts/Base.astro";
+import theme from "@/config/theme.json";
+
+const { colors: themeColors } = theme
+
+const transparencies = [
+  "/10",
+  "/20",
+  "/30",
+  "/40",
+  "/50",
+  "/60",
+  "/70",
+  "/80",
+  "/90",
+  "",
+].reverse();
+---
+
+<Base>
+  <div class="bg-one w-20 h-20"></div>
+  <div class="container flex flex-col justify-center items-center">
+    {
+      themeColors.map((color) => (
+        <div class="flex flex-row flex-wrap justify-center items-center">
+          {transparencies.map((exposure) => (
+            <div class={`w-auto px-3 h-20 bg-${color}${exposure} m-2 border-border border-2 rounded` }>
+              <p class={`${color.startsWith('text') ? 'dark:text-black text-white' : "text-text text-center"}`}>
+                {color}
+                {exposure}
+              </p>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</Base>
