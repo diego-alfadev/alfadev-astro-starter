@@ -47,8 +47,8 @@ The starter is designed to be **the less intrusive as possible**, providing you 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/diego-alfadev/alfadev-astro.git
-   cd alfadev-astro
+   git clone https://github.com/diego-alfadev/alfadev-astro-starter.git
+   cd alfadev-astro-starter
    ```
 
 2. **Install dependencies:**
